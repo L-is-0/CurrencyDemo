@@ -23,6 +23,9 @@ public class DBService extends IntentService {
             final String action = intent.getAction();
             if (SET_UP_DB_ACTION.equals(action)) {
                 setupDB();
+                Intent intent1 = new Intent(SET_UP_DB_ACTION);
+                intent1.putExtra("msg","Completed action : " + SET_UP_DB_ACTION);
+                sendBroadcast(intent1);
             }
         }
     }

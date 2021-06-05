@@ -15,12 +15,5 @@ public class DemoActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_demo);
-        setupDB();
-    }
-
-    private void setupDB(){
-        Intent i = new Intent(getApplicationContext(), DBService.class);
-        i.setAction("SETUP_DB");
-        startService(i);
     }
 }
