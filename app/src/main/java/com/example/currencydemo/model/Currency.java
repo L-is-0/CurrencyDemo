@@ -3,8 +3,6 @@ package com.example.currencydemo.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import javax.crypto.spec.PSource;
-
 public class Currency implements Parcelable {
     private String id;
     private String name;
@@ -39,10 +37,6 @@ public class Currency implements Parcelable {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
     }
@@ -53,10 +47,6 @@ public class Currency implements Parcelable {
 
     public String getSymbol() {
         return symbol;
-    }
-
-    public void setSymbol(String symbol) {
-        this.symbol = symbol;
     }
 
     @Override
