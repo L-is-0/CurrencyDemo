@@ -15,6 +15,7 @@ import com.example.currencydemo.service.DBService;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
+    private BroadcastReceiver broadcastReceiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,8 +24,14 @@ public class MainActivity extends AppCompatActivity {
         setupDB();
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        unregisterReceiver(broadcastReceiver);
+    }
+
     private void registerBroadCastReceiver() {
-        BroadcastReceiver broadcastReceiver = new MyReceiver();
+        broadcastReceiver = new MyReceiver();
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("SETUP_DB");
         registerReceiver(broadcastReceiver, intentFilter);
@@ -41,6 +48,9 @@ public class MainActivity extends AppCompatActivity {
         public void onReceive(Context context, Intent intent) {
             Log.d(TAG, "Received intent action : " + intent.getAction());
             startActivity(new Intent(getApplicationContext(), DemoActivity.class));
+            finish();
         }
     }
+
+
 }

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">CurrencyDemo</string>
+    <string name="sort_button">Sort</string>
+    <string name="load_button">Load</string>
 </resources>

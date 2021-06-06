@@ -4,6 +4,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <FrameLayout
+        android:id="@+id/fragment_view"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_alignParentTop="true" />
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -13,17 +19,18 @@
         android:orientation="horizontal">
 
         <Button
+            style="@style/Widget.LazyOrder.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="50dp"
-            style="@style/Widget.LazyOrder.Button"
-            android:text="Load" />
+            android:onClick="onLoadClicked"
+            android:text="@string/load_button" />
 
         <Button
+            style="@style/Widget.LazyOrder.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/Widget.LazyOrder.Button"
-            android:text="Sort" />
+            android:onClick="onSortClicked"
+            android:text="@string/sort_button" />
     </LinearLayout>
-
 </RelativeLayout>
